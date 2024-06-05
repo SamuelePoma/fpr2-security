@@ -3,7 +3,7 @@
     <div>
         Course Name: {{ $course->name }}<br/>
         Average Grade: {{ $course->average() }}<br/>
-        Passed: {{ $course->isPassed() ? "Yes" : "No"; }}<br/>
+        Passed: {{ $course->isPassed() ? "Yes" : "No" }}<br/>
         <a href='{{ route('courses.show', $course) }}'>Go to course</a><br/>
         <br/>
     </div>

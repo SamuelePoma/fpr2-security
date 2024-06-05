@@ -25,11 +25,32 @@
                 </div>
                 <div class="navbar-menu" id="navMenu">
                     <div class="navbar-start">
-                        <a href="{{ route('home') }}"
-                           class="navbar-item {{ Request::route()->getName() === 'home' ? "is-active" : "" }}">
+                        <a href="{{ route('welcome') }}"
+                           class="navbar-item {{ Request::route()->getName() === 'welcome' ? "is-active" : "" }}">
                             Home
                         </a>
                     </div>
+
+                    <div class="navbar-start">
+                        <a href="{{ route('courses.index') }}"
+                           class="navbar-item {{ Request::route()->getName() === 'courses' ? "is-active" : "" }}">
+                            courses
+                        </a>
+
+                    </div>
+                    @if(Auth()->check())
+                        <div class="navbar-start ml-auto">
+                            <a href="{{ route('profile.edit') }}" class="navbar-item {{ Request::route()->getName() === 'profile' ? "is-active" : "" }}">
+                                Hello, {{ Auth()->user()->name }}
+                            </a>
+                        </div>
+                    @else
+                        <div class="navbar-end">
+                            <a href="{{ route('register') }}" class="navbar-item {{ Request::route()->getName() === 'register' ? "is-active" : "" }}">
+                                Hello, guest
+                            </a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </nav>
