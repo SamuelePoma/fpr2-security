@@ -14,9 +14,6 @@ class Uppercase implements ValidationRule
     {
         if (strtoupper($value) !== $value) {
             $fail('validation.uppercase')->translate();
-
         }
-
     }
-
 }

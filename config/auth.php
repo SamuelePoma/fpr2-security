@@ -12,6 +12,10 @@ return [
     | as required, but they're a perfect start for most applications.
     |
     */
+    'throttle' => [
+        'max_attempts' => 5,
+        'decay_minutes' => 1,
+    ],
 
     'defaults' => [
         'guard' => 'web',
